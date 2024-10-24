@@ -102,7 +102,7 @@ bool GuiEndFrame(ImVec2& wndPos, ImVec2& wndSize, bool canMove)
 
 bool GuiNewFrame() {
     MSG msg;
-    while (::PeekMessage(&msg, g_hwnd, 0U, 0U, PM_REMOVE)) {
+    while (::PeekMessage(&msg, NULL, 0U, 0U, PM_REMOVE)) {
         TranslateMessage(&msg);
         DispatchMessageW(&msg);
         if (msg.message == WM_QUIT)
